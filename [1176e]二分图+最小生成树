@@ -1,0 +1,92 @@
+#include<bits/stdc++.h>
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define p_q priority_queue
+#define all(x) (x).begin(),(x).end()
+#define rall(x) (x).rbegin(),(x).rend()
+#define inf 0x3f3f3f3f
+const int  mod =1e9+7;
+const int p_mod=998244353;
+#define forn(i,n) for(int (i)=1;(i)<=(n);(i)++)
+#define forn0(i,n) for(int (i)=0;(i)<(n);(i)++)
+#define vii vector<pair<int ,int >>
+#define vi vector<int> 
+#define pii pair<int,int>
+#define DBG
+#define debug(x) cout<<#x<<" is "<<x<<endl
+#define pw(x) (1LL<<(x))
+typedef long long ll;
+typedef unsigned long long ull;
+using namespace std;
+/*1.be able to use template [Multiset] skillful
+function	parameter is double type:ceil() floor() 
+__gcd() */ 
+ll fast_pow(ll a,ll b){
+	ll res=1;
+	while(b){
+		if(b&1)res=(res*a)%mod;
+		b>>=1;
+		a=(a*a)%mod;
+	}
+	return res%mod;
+}
+const int N=2e5+5;
+int root[N],n,m;
+void make_set(){for(int i=1;i<=n;i++)root[i]=i;}
+int find_set(int x){return root[x]==x?root[x]:root[x]=find_set(root[x]);}
+bool union_set(int x,int y){
+	x=find_set(x);
+	y=find_set(y);
+	if(x==y)return false;
+	return root[y]=root[x];
+}
+void fail(bool flag){if(flag){puts("NO");exit(0);}else cout<<"YES"<<endl;}
+vi g[N];
+void dfs(int x,int pre,bool f,vi & ans1, vi & ans2){
+	if(f)ans1.pb(x);
+	else ans2.pb(x);
+	for(auto v:g[x])if(v!=pre)dfs(v,x,!f,ans1,ans2);
+}
+int main(){
+	std::ios::sync_with_stdio(false);
+    std::cin.tie(0);
+	int t;
+	cin>>t;
+	while(t--){
+		cin>>n>>m;
+		vii e;
+		forn(i,n)g[i].clear();
+		//ans1.clear();ans2.clear();
+		vi ans1,ans2;
+		forn(i,m){
+			int u,v;
+			cin>>u>>v;
+			e.pb(mp(u,v));
+			root[u]=u,root[v]=v;
+		}
+		for(auto x:e){
+			int u=x.fi,v=x.se;
+			if(union_set(u,v)){
+				g[u].pb(v);
+				g[v].pb(u);
+			}
+		}
+		dfs(1,-1,1,ans1,ans2);
+		if(ans1.size()<ans2.size()){
+			cout<<ans1.size()<<endl;
+			for(auto x:ans1)cout<<x<<" ";
+			cout<<endl;
+		}else {
+			cout<<ans2.size()<<endl;
+			for(auto x:ans2)cout<<x<<" ";
+			cout<<endl;
+		} 
+	} 
+
+#ifdef DBG
+#endif
+	return 0;
+}
+
