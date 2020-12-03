@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay">
+      <!--<ion-header>-->
+        <!--<ion-toolbar>-->
+          <!--<ion-title>Menu</ion-title>-->
+        <!--</ion-toolbar>-->
+      <!--</ion-header>-->
+      <ion-content>
+        <ion-list style="background-color: #989AA2">
+          <ion-item color="medium">
+            <ion-label>
+              <ion-text>
+                <h2>杨伟翔</h2>
+              </ion-text>
+              <p>18965151466</p>
+            </ion-label>
+            <ion-badge slot="end" color="primary">高级版</ion-badge>
+          </ion-item>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item color="medium" [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-button color="light" fill="clear" href="setting">
+              <ion-icon slot="start" name='settings'></ion-icon>设置
+            </ion-button>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

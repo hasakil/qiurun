@@ -1,0 +1,42 @@
+.welcome-card img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+.less-equal{
+  color: var(--ion-color-success, #10dc60);
+}
+.greater{
+  color: var(--ion-color-danger, #f04141);
+}
+.sales {
+  width: 100px;
+  background-color: #f4f5f8;
+}
+.quick-actions + .quick-actions{
+  margin-top: -1px;
+}
+.quick-action-item {
+  height: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ececec;
+}
+.quick-action-item + .quick-action-item{
+  margin-left: -1px;
+}
+.shortcut{
+  text-align: center;
+}
+.shortcut ion-icon{
+  font-size: 48px;
+}
+.shortcut div{
+  color: var(--ion-color-dark);
+}
+a {
+  text-decoration: none;
+}
+.quick-action-item:nth-child(4n+1) {
+  margin-left: 0px !important;
+}

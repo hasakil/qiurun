@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar no-border>
+    <ion-title class="title">店铺信息</ion-title>
+    <ion-buttons slot="start">
+      <ion-button style="color: white"  href="setting">
+        <ion-icon name="arrow-back"></ion-icon>返回
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="shop-content">
+    <ion-list inset="true">
+      <ion-item routerLink="/shop-edit" [queryParams]="{title:'店铺名称',property:'name'}">
+        <ion-label>店铺名称</ion-label>
+        <ion-note item-end>HHH</ion-note>
+      </ion-item>
+      <ion-item routerLink="/shop-edit" [queryParams]="{title:'店铺简称',property:'name'}">
+        <ion-label>店铺简称</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>注册时间</ion-label>
+        <ion-note slot="end">2019-12-26 21:16:48</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>手机号码</ion-label>
+        <ion-note slot="end">15960033388</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-list inset="true">
+      <ion-item detail href="">
+        <ion-label>电子邮箱</ion-label>
+      </ion-item>
+      <ion-item detail href="">
+        <ion-label>店主名称</ion-label>
+      </ion-item>
+      <ion-item routerLink="/shop-edit" [queryParams]="{title:'店铺电话',property:'name'}">
+        <ion-label>店铺电话</ion-label>
+      </ion-item>
+      <ion-item detail href="">
+        <ion-label>行业类型</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

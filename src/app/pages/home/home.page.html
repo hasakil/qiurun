@@ -1,0 +1,99 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let s of sales">
+        <h6>{{s.title}}</h6>
+        <h4><span>{{s.current | number:'1.2-2'}}元</span></h4>
+        <p>
+          {{s.content}}
+          <span [ngClass]="{'less-equal': s.current - s.previous <=0, 'greater': s.current - s.previous > 0}">
+            {{s.current - s.previous | number:'1.2-2'}} 
+          </span>&nbsp;
+
+          <用switch处理三个图标遍历，也可以用ngif>
+          <ng-container [ngSwitch]="minus(s.current, s.previous)">
+            <ion-icon name="arrow-round-up" color="danger" *ngSwitchCase="1"></ion-icon>
+            <ion-icon name="arrow-round-forward" color="success" *ngSwitchCase="0"></ion-icon>
+            <ion-icon name="arrow-round-down" color="success" *ngSwitchCase="-1"></ion-icon>
+          </ng-container>
+          <ion-icon name="arrow-round-up"></ion-icon>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      首页
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="calendar"></ion-icon>
+      </ion-button>
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content non-padding>
+  <div text-center>
+    <img src="assets\img\androidbanner.png" style="width: 100%;" alt="首页图片">
+  </div>
+
+  <ion-grid>
+    <ion-row color="medium">
+      <ion-col *ngFor="let s of sales">
+        <h6>{{s.title}}</h6>
+        <h4><span>{{s.current | number:'1.2-2'}}元</span></h4>
+        <p>
+          {{s.content}}<br>
+          <span [ngClass]="{'less-equal':s.current - s.previous <= 0,'greater':s.current - s.previous > 0}">
+          {{s.current - s.previous | number:'1.2-2'}}
+          </span>
+          <ng-container [ngSwitch]="minus(s.current, s.previous)">
+            <ion-icon name="arrow-up" color="danger" *ngSwitchCase="1"></ion-icon>
+            <ion-icon name="arrow-forward" color="success" *ngSwitchCase="0"></ion-icon>
+            <ion-icon name="arrow-down" color="success" *ngSwitchCase="-1"></ion-icon>
+          </ng-container>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-row class="quick-actions"  *ngFor="let sc of shortcut">
+      <ion-col class="quick-action-item" *ngFor="let sc2 of sc">
+        <a class="shortcut" routerLink={{sc2.href}} *ngIf="!sc2.disable">
+          <img src="assets/img/{{sc2.name}}.svg" alt="" class="index_quickaction">
+          <ion-icon name={{sc2.name}}></ion-icon>
+          <div>{{sc2.text}}</div>
+        </a>
+      </ion-col>
+    </ion-row> -->
+    <ion-row class="grid" *ngFor="let sc of shortcut">
+      <ion-col size="2" *ngFor="let sc2 of sc">
+        <div class="grid-item">
+          <img src="assets/img/{{sc2.name}}.svg" alt="">
+          <ion-icon size="large" name="{{sc2.name}}" ></ion-icon>
+          <div>{{sc2.text}}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+  </ion-grid>
+
+  
+  <zyt-copyright [bottom]="'20px'"></zyt-copyright>
+  <!-- <zyt-copyright [bottom]="'20px'"></zyt-copyright> -->
+</ion-content>

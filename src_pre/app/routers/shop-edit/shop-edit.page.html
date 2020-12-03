@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar no-border>
+    <ion-title class="title">{{title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button style="color: white"  href="shop">
+        <ion-icon name="arrow-back"></ion-icon>取消
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <!--<ion-navbar color="primary">-->
+    <!--<ion-title>{{title}}</ion-title>-->
+  <!--</ion-navbar>-->
+</ion-header>
+
+<ion-content>
+  <div class="shop-edit-content">
+    <ion-list inset="true">
+      <form #editShopForm>
+        <ion-item>
+          <ion-input name="value" type="text"  [(ngModel)]="value" #shopEditValue="ngModel"></ion-input>
+          <!--<ion-input name="value" type="text"  >{{userInfo.shopName}}</ion-input>-->
+        </ion-item>
+      </form>
+    </ion-list>
+    <ion-list inset="true">
+      <ion-button color="primary" style="width: 100%;margin: 0px" (click)="save()">完成</ion-button>
+    </ion-list>
+  </div>
+</ion-content>

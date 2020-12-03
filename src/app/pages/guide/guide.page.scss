@@ -1,0 +1,15 @@
+
+.fixed-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+ion-slides{
+    height: 100%;
+}   
+.full{ 
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      首页
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="calendar"></ion-icon>
+      </ion-button>
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="assets/img/androidbanner.png" alt="">
+  </ion-card>
+  <ion-grid style="padding: 0px">
+    <ion-row >
+      <ion-col *ngFor="let s of sales" class="sales">
+        <h6>{{s.title}}</h6>
+        <h4><span>{{564.678 | number:'1.2-2'}}元</span></h4>
+        <p>
+          {{s.content}}
+          <span [ngClass]="{'less-equal':s.current - s.previous <= 0,'greater':s.current - s.previous > 0}">
+          {{s.current - s.previous}}
+        </span>&nbsp;
+          <ng-container [ngSwitch]="minus(s.current, s.previous)">
+            <ion-icon name="arrow-round-up" color="danger" *ngSwitchCase="1"></ion-icon>
+            <ion-icon name="arrow-round-forward" color="success" *ngSwitchCase="0"></ion-icon>
+            <ion-icon name="arrow-round-down" color="success" *ngSwitchCase="-1"></ion-icon>
+          </ng-container>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid style="padding: 0px">
+    <ion-row class="quick-actions">
+      <ion-col class="quick-action-item">
+        <a class="shortcut" (click)="addProductPage()">
+          <img src="assets/img/add_salse.png" style="width: 50%;height: 50%;">
+          <div style="margin-top: 5px;" >新增商品</div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/add_user.png" style="width: 50%;height: 50%;">
+          <div>
+            新增会员
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/sales_account.png" style="width: 50%;height: 50%;">
+          <div>
+            收银记账
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/a_note.png" style="width: 50%;height: 50%;">
+          <div>
+            支出管理
+          </div>
+        </a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="quick-actions">
+      <ion-col class="quick-action-item">
+        <a class="shortcut"  href="category-list">
+          <img src="assets/img/sales_management.png" style="width: 50%;height: 50%;">
+          <div>
+            商品管理
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/user_management.png" style="width: 50%;height: 50%;">
+          <div>
+            会员管理
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/shop_management.png" style="width: 50%;height: 50%;">
+          <div>
+            查询销售
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/analysis.png" style="width: 50%;height: 50%;">
+          <div>
+            智能分析
+          </div>
+        </a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="quick-actions">
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/gongying_more.png" style="width: 50%;height: 50%;">
+          <div>
+            供应商管理
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/guandan_more.png" style="width: 50%;height: 50%;">
+          <div>
+            挂单
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+        <a class="shortcut">
+          <img src="assets/img/image_addsales.png" style="width: 50%;height: 50%;">
+          <div>
+            高级功能
+          </div>
+        </a>
+      </ion-col>
+      <ion-col class="quick-action-item">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

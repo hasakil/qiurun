@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-title >我的</ion-title>
+
+    <!-- 代替文档中进入店铺 -->
+    <ion-buttons slot="end">  
+      <ion-button href="/tabs/me/setting">  
+          <ion-icon slot="start" name="settings" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- 用me页代替左侧菜单 -->
+<ion-content>
+  <ion-list> 
+    <ion-item > 
+      <ion-label> 
+        <ion-text color="primary">  
+          <h2>周依婷的老店</h2>
+        </ion-text>
+        <p>13215001837</p>
+      </ion-label>
+      <ion-badge slot="end" color="primary"> 高级版 </ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>  
+    <ion-item detail *ngFor="let page of appPages" [routerLink]="page.url">
+      <!-- icon 无法显示？ -->
+      <ion-icon slot="start" name="{{page.icon}}" color="black"></ion-icon>
+      <ion-label>{{page.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

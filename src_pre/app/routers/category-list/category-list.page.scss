@@ -1,0 +1,38 @@
+.title{
+  background-color: #FF6A3C;
+  color: white;
+}
+ion-grid {
+  height: 100%;
+  align-items: stretch;
+  ion-row {
+    flex: 1 0 100%;
+    height: 100%;
+    ion-col[left] {
+      background-color: var(--ion-color-light);
+    }
+  }
+}
+.right-list,.on-right
+{
+  position:relative;
+  left: 40%;
+  width:  60%;
+  bottom: -92%;
+}
+.left-list{
+  width:40%;
+  margin-left: 0;
+  //color:color($colors,dark);
+  background-color: gray;
+}
+.left-list-background{
+  background-color: gray;
+}
+.item-active{
+  background-color: #fff;
+  //border-left-color: color($colors,primary);
+  border-left-color: var(--ion-color-primary);
+  border-left-width: 4px;
+  border-left-style: solid;
+}

@@ -1,0 +1,18 @@
+.title{
+  background-color: #FF6A3C;
+  color: white;
+}
+.setting-content{
+  padding-top: 10px;
+  height: 100%;
+  background-color: #f4f5f8;
+}
+app-setting {
+  ion-toolbar {
+    position: absolute;
+    --background: transparent;
+    --border-color: transparent;
+    background-color: red;
+  }
+
+}

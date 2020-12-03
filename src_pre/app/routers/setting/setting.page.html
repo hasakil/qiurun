@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar no-border>
+    <ion-title class="title">店铺设置</ion-title>
+    <ion-buttons slot="start">
+      <ion-button style="color: white"  href="welcome">首页
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="setting-content">
+    <ion-list inset="true">
+      <ion-item detail href="shop">
+        <ion-label>店铺设置</ion-label>
+      </ion-item>
+      <ion-item detail href="">
+        <ion-label>密码</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list inset="true">
+      <ion-item detail href="">
+        <ion-label>关于我们</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>联系客服</ion-label>
+        <a href="tel:10086">拨打电话10086</a>
+      </ion-item>
+      <ion-item detail href="">
+        <ion-label>版本号：</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list inset="true">
+      <ion-item (click)="onLogout()">
+        <ion-label>安全退出</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

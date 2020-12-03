@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-button color="light" href="/tabs/me">返回</ion-button>
+      </ion-buttons>
+    <ion-title>店铺设置</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content non-padding color="medium">
+    <ion-list inset="true">
+        <ion-item  detail href="/tabs/me/shop">
+            <ion-label>店铺设置</ion-label>
+        </ion-item>
+        <ion-item detail href="/tabs/me/change-password">
+            <ion-label>密码</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-list inset="true">
+        <ion-item detail (click)="goToaboutus()">
+            <ion-label>关于我们</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>联系客服</ion-label>
+            <a href="tel:13215001837">电话13215001837</a>
+        </ion-item>
+        <ion-item>
+            <ion-label>版本号</ion-label>
+            <ion-note slot="end">{{version}}</ion-note>
+        </ion-item>
+    </ion-list>
+
+    <ion-list inset="true">
+        <ion-item (click)="onLogout()">
+            安全退出
+        </ion-item>
+    </ion-list>
+</ion-content>
